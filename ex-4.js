@@ -374,4 +374,10 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const newBills = (bills) => bills.filter((bills) => bills.member != null);
+const billMembers = (bills) => newBills(bills).map((bills) => bills.member.name);
+const memNotDup = (bills) => [... new Set(billMembers(bills))];
+const totalMembers = (bills) => `Unique Members Count: ${memNotDup(bills).length}`;
+
+
+console.log(totalMembers(bills));

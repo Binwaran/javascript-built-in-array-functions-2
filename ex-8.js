@@ -373,6 +373,16 @@ const bills = [
     },
 ];
 
+
+// filter() push() reduce() เมื่อเจอlocationใหม่ ให้เพิ่ม locationนั้นเข้าไป
 // Start coding here
 
-const totalPaidByLocation;
+const totalTransactionByLocation = bills.reduce((acc, cur) => 
+    {
+     acc[cur.location] = (acc[cur.location] || 0) + cur.total;
+     return acc;
+    }, 
+    {}
+);
+    console.log(totalTransactionByLocation);
+

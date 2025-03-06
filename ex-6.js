@@ -2,6 +2,13 @@ const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
   // Start coding here
+  if (carCollection.includes(carBrand, 0))
+    return `${carBrand} has already exists in position ${carCollection.indexOf(carBrand)} of the car collection.`
+  else
+    {
+      carCollection.push(carBrand);
+      return `new car collection is : ${carCollection}`
+    }
 }
 
 //ผลลัพธ์ที่ควรได้จาก Example case
